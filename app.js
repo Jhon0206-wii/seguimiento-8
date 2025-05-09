@@ -1,4 +1,4 @@
-// Seleccionar elementos del DOM
+// Seleccionar los elemento x id del DOM: ingresar-tarea, boton-agregar y lista-tareas
 const inputTarea = document.getElementById('ingresar-tarea');
 const botonAgregar = document.getElementById('boton-agregar');
 const listaTareas = document.getElementById('lista-tareas');
@@ -81,12 +81,14 @@ function nuevaTarea() {
 
 // Escuchar eventos
 botonAgregar.addEventListener('click', nuevaTarea);
+
+// Escuchar el inputTarea y en el evento keypress con la tecla Enter 
+// llamar a nuevaTarea
 inputTarea.addEventListener('keypress', (e) => {
   if (e.key === 'Enter') {
     nuevaTarea();
   }
 });
-
 // Mostrar tareas al iniciar
 mostrarTareas();
 
